@@ -71,6 +71,7 @@ public 		string LoginInfo = String.Empty;
 			{
 				TTS.Speak("Nowa wiadomość otrzymana.");
 				CurrentNumOfMessages = ServerNumOfMessages;
+				MessagesGotFromStartOfSession += 1;
 			}
 		}
 
@@ -87,6 +88,11 @@ public 		string LoginInfo = String.Empty;
 		{
 			this.Show();
 			NTF_Notification.Visible = false;
+		}
+
+		private void BTN_ClearCounter_Click(object sender, EventArgs e)
+		{
+			MessagesGotFromStartOfSession = 0;
 		}
 	}
 }
